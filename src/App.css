@@ -1,51 +1,128 @@
-body{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.App {
-  text-align: center;
+body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  min-height: 100vh;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  padding: 20px;
+}
+
+.gameboard {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  /* justify-content: center; */
+  margin-bottom: 20px;
+  background: #ccc;
+  padding: 10px;
 }
 
-h1 {
-  color: #333;
+.scores{
+  display: flex;
+  gap: 20px;
 }
 
-.card-grid {
+.scores p{
+  border-radius: 8px;
+  font-size: 18px;
+  padding: 20px;
+  background: #d6d61a;
+  color: #fff;
+}
+
+.scores p span{
+  height: 30px;
+  width: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 50%;
+  background: #595911;
+}
+
+.card-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-  margin: 20px 0;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 10px;
 }
 
 .card {
-  width: 80px;
-  height: 80px;
-  background: #2c3e50;
+  border: 1px solid #ccc;
   border-radius: 8px;
+  padding: 10px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.05);
 }
 
 .card img {
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
+  width: 100px;
+  height: 100px;
 }
 
-.card-back {
-  font-size: 2rem;
-  color: #fff;
+.modal {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 2% auto;
+  width: 500px;
+  border-radius: 5px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.modal-content h5{
+  padding: 20px;
+  font-size: 1.5rem;
+  text-align: left;
+  margin: 0;
+}
+
+.modal-body{
+  position: relative;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  flex: 1 1 0;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.modal-body p{
+  color: #d6d61a;
+  margin: 0;
+}
+
+.modal-footer{
+  padding: 10px;
+  text-align: right;
+}
+
+.modal-footer button{
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 8px;
+  background: rgba(16, 158, 16, 0.891);
+  color: #ffffff;
 }

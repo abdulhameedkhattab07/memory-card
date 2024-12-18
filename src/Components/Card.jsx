@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 
-const Card = ({ gif, isFlipped, onClick }) => {
+const Card = ({ id, name, image, handleCardClick }) => {
     return (
-        <div className="card" onClick={onClick}>
-            {isFlipped ? (
-                <img src={gif.url} alt="Memory card" />
-            ) : (
-                <div className="card-back">?</div>
-            )}
-        </div>
+        <>
+            <div className="card" onClick={() => handleCardClick(id)}>
+                <img src={image} alt={`${name}-image`} />
+                <p>{name}</p>
+            </div>
+        </>
     );
 };
 
